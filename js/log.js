@@ -14,7 +14,7 @@ Frogger.Util.inherits(Frogger.Log, Frogger.FloatingObject);
 
 Log.COLOR = "#9C661F";
 Log.DIM_X = 100;
-Log.VEL = [1,0]
+Log.VEL = [20,0]
 
 
 Log.prototype.draw = function(ctx){

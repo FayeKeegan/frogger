@@ -18,11 +18,28 @@
     });
   };
 
+
   Game.prototype.step = function(){
-    this.floatingObjects.forEach(function(floatingObject){
-      floatingObject.move();
-    }.bind(this))
+    this.moveObjects();
   };
+
+  Game.prototype.moveObjects = function () {
+    this.floatingObjects.forEach( function(floatingObject){
+      floatingObject.move();
+      console.log(floatingObject.pos[0]);
+      console.log(this.dim_x);
+        if (floatingObject.pos[0] > this.dim_x){
+          this.wrap(floatingObject);
+        }
+      }.bind(this));
+  };
+
+  Game.prototype.wrap = function(floatingObject){
+    debugger
+    var x = 0 - floatingObject.dim_x;
+    var y = floatingObject.pos[1];
+    floatingObject.pos = [x,y];
+ };
 
   Game.prototype.addFloatingObjects = function(){
     var log = new Frogger.Log({
