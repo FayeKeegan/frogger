@@ -1,5 +1,6 @@
 (function(){
   var Frogger = window.Frogger = window.Frogger || {};
+  var key = window.key = window.key || {};
 
   var View = Frogger.View = function(Game, ctx) {
     this.game = Game;
@@ -31,7 +32,7 @@
     });
     key("space", function() {
       // game.ship.fireBullet();
-    })
+    });
   };
 
 })();
