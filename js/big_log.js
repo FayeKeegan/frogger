@@ -13,4 +13,10 @@
 	BigLog.DIM_X = 150;
 	BigLog.VEL = [15,0]
 
+	BigLog.prototype.wrap = function(canvas_x){
+		var x = 0 - this.dim_x;
+    var y = this.pos[1];
+   	this.pos = [x,y];
+	};
+
 })();

@@ -23,29 +23,38 @@
     this.moveObjects();
   };
 
+
   Game.prototype.moveObjects = function () {
     this.floatingObjects.forEach( function(floatingObject){
       floatingObject.move();
-      console.log(floatingObject.pos[0]);
-      console.log(this.dim_x);
-        if (floatingObject.pos[0] > this.dim_x){
-          this.wrap(floatingObject);
+        if (!this.onCanvas(floatingObject)){
+          floatingObject.wrap(this.dim_x)
         }
       }.bind(this));
   };
 
-  Game.prototype.wrap = function(floatingObject){
-    var x = 0 - floatingObject.dim_x;
-    var y = floatingObject.pos[1];
-    floatingObject.pos = [x,y];
- };
+  Game.prototype.onCanvas = function(object){
+    var left = object.pos[0];
+    var right = object.pos[0] + object.dim_x;
+    if ((left < 0 && right < 0)|| left > this.dim_x + 1){
+      return false
+    } else {
+      return true
+    }
+  };
 
   Game.prototype.addFloatingObjects = function(){
-    var log = new Frogger.BigLog({
+    var bigLog = new Frogger.BigLog({
       pos: [0,20],
       game: this
     })
-    this.floatingObjects.push(log);
+    this.floatingObjects.push(bigLog);
+
+    var smallLog = new Frogger.SmallLog({
+      pos: [0,80],
+      game: this
+    })
+    this.floatingObjects.push(smallLog);
   };
 
 
