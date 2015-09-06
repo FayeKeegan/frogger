@@ -35,14 +35,13 @@
   };
 
   Game.prototype.wrap = function(floatingObject){
-    debugger
     var x = 0 - floatingObject.dim_x;
     var y = floatingObject.pos[1];
     floatingObject.pos = [x,y];
  };
 
   Game.prototype.addFloatingObjects = function(){
-    var log = new Frogger.Log({
+    var log = new Frogger.BigLog({
       pos: [0,20],
       game: this
     })
