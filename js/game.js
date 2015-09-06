@@ -76,13 +76,17 @@
   };
 
   Game.prototype.addFloatingObjects = function(){
-    for (var y = 0 + this.lily_pad_y; y < this.river_bank_y; y ++) {
+    var river_start = this.lily_pad_y;
+    var river_end = this.lily_pad_y + 6 * this.lane_y;
+    var log_y = river_start;
+    debugger
+    for (var i = 0; i < 5; i++) {
       var bigLog = new Frogger.BigLog({
-        pos: [0, i],
+        pos: [0, log_y],
         game: this
       })
-      debugger
-      floatingObjects.push(bigLog);
+      this.floatingObjects.push(bigLog);
+      log_y += this.lane_y;
     };
   };
 
