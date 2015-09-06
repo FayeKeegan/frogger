@@ -5,24 +5,31 @@
     this.dim_y = dim_y;
     this.dim_x = dim_x;
     this.floatingObjects = [];
-    this.addFloatingObjects()
+    this.addFloatingObjects();
   };
 
-
   Game.prototype.draw = function (ctx) {
-    var that = this;
     ctx.fillStyle = "#63B8FF";
     ctx.fillRect (0, 0, this.dim_x, this.dim_y / 2);
     ctx.fillStyle = "#D6D6D6";
     ctx.fillRect (0, this.dim_y / 2, this.dim_x, this.dim_y / 2);
+    this.floatingObjects.forEach( function(floatingObject){
+      floatingObject.draw(ctx);
+    });
   };
 
   Game.prototype.step = function(){
-    
+    this.floatingObjects.forEach(function(floatingObject){
+      floatingObject.move();
+    }.bind(this))
   };
 
   Game.prototype.addFloatingObjects = function(){
-    
+    var log = new Frogger.Log({
+      pos: [0,20],
+      game: this
+    })
+    this.floatingObjects.push(log);
   };
 
 
