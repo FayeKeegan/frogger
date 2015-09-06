@@ -6,19 +6,16 @@
   </head>
   <body>
     <canvas id="game-canvas"></canvas>
-    <script src="lib/keymaster.js"></script>
-    <script src="lib/game.js"></script>
-    <script src="lib/util.js"></script>
-    <script src="lib/MovingObject.js"></script>
-    <script src="lib/asteroid.js"></script>
-    <script src="lib/bullet.js"></script>
-    <script src="lib/ship.js"></script>
-    <script src="lib/gameView.js"></script>
+    <script src="js/keymaster.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/view.js"></script>
     <script>
       var canvasEl = document.getElementById("game-canvas");
-      canvasEl.height = 500;
-      canvasEl.width = 500;
-      view = new Frogger.View( new Frogger.Game(), canvasEl.getContext('2d'))
+      var dim_y = 500
+      var dim_x = 800
+      canvasEl.height = dim_y;
+      canvasEl.width = dim_x;
+      view = new Frogger.View( new Frogger.Game(dim_y, dim_x), canvasEl.getContext('2d'))
       view.start();
     </script>
   </body>
