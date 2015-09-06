@@ -6,19 +6,25 @@
 		this.color = Log.COLOR;
 		this.dim_x = Log.DIM_X;
 	  this.vel = Log.VEL;
+	  this.padding = Log.PADDING;
 	};
 
 	Frogger.Util.inherits(Frogger.Log, Frogger.FloatingObject);
 
 	Log.COLOR = "#9C661F";
 	Log.DIM_X = 100;
-	Log.VEL = [1,0]
+	Log.VEL = [1,0];
+	Log.PADDING = 3;
 
 
 	Log.prototype.draw = function(ctx){
-		ctx.clearRect(this.pos[0], this.pos[1], this.dim_x, this.dim_y);
+		var x = this.pos[0] + this.padding;
+		var y = this.pos[1] + this.padding;
+		var x_length = this.dim_x - this.padding;
+		var y_length = this.dim_y - this.padding;
+		ctx.clearRect(x, y, x_length, y_length);
 	  ctx.fillStyle = this.color;
-	  ctx.fillRect(this.pos[0], this.pos[1], this.dim_x, this.dim_y);
+	  ctx.fillRect(x, y, x_length, y_length);
 	};
 
 })();

@@ -3,11 +3,11 @@
   var Frogger = window.Frogger = window.Frogger || {};
 
   var FloatingObject = Frogger.FloatingObject = function(options){
+    this.game = options.game;
     this.pos = options.pos;
     this.vel = options.vel;
     this.dim_x = options.dim_x;
-    this.dim_y = 50;
-    this.game = options.game;
+    this.dim_y = this.game.lane_y;
   };
 
   FloatingObject.prototype.draw = function(ctx){
