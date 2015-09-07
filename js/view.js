@@ -19,19 +19,17 @@
   View.prototype.bindKeyHandlers = function () {
     var game = this.game;
     key("up", function() {
-      // game.ship.power([0, -1]);
+      debugger
+      game.frog.leap([0, -1])
     });
     key("down", function() {
-      // game.ship.power([0, 1]);
+      game.frog.leap([0, 1])
     });
     key("left", function() {
-      // game.ship.power([-1, 0]);
+      game.frog.leap([-1, 0])
     });
     key("right", function() {
-      // game.ship.power([1, 0]);
-    });
-    key("space", function() {
-      // game.ship.fireBullet();
+      game.frog.leap([1, 0])
     });
   };
 

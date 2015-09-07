@@ -57,6 +57,8 @@
     this.vehicles.forEach( function(vehicle){
       vehicle.draw(ctx);
     });
+    //draw frog
+    this.frog.draw(ctx);
   };
   
   Game.prototype.step = function(){
@@ -79,7 +81,9 @@
   };
 
   Game.prototype.addFrog = function(){
-    // this.frog = new Frogger.Frog();
+    this.frog = new Frogger.Frog({
+      game: this
+    });
   };
 
   Game.prototype.onCanvas = function(object){
