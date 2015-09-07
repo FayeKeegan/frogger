@@ -93,11 +93,15 @@
           small_log_x += 100
         };
       } else {
-        var log = new Frogger.BigLog({
-          pos: [0, log_y],
-          game: this
-        }) 
-        this.floatingObjects.push(log)
+        big_log_x = 0;
+        for (var k = 0; k < 4; k++) {
+          var log = new Frogger.BigLog({
+            pos: [big_log_x, log_y],
+            game: this
+          })
+          this.floatingObjects.push(log);
+          big_log_x += 200;
+        }
       }
       log_y += this.lane_y;
     };
