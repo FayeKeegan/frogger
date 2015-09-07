@@ -13,10 +13,4 @@
 	SmallLog.DIM_X = 75;
 	SmallLog.VEL = [-10,0]
 
-	SmallLog.prototype.wrap = function(canvas_x){
-		var x = canvas_x;
-    var y = this.pos[1];
-    this.pos = [x,y];
-	};
-
 })();

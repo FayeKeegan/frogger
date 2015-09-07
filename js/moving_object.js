@@ -20,4 +20,15 @@
     this.pos[1] += this.vel[1];
   };
 
+  MovingObject.prototype.wrap = function(canvas_x){
+    if (this.vel[0] > 0){
+      var x = 0 - this.dim_x;
+     
+    } else {
+      var x = canvas_x;
+    }
+    var y = this.pos[1];
+    this.pos = [x,y];
+  };
+
 })();

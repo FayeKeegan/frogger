@@ -88,11 +88,35 @@
   };
 
   Game.prototype.addVehicles = function(){
-    var car = new Frogger.Car({
-      pos: [10, 10],
-      game: this
-    })
-    this.vehicles.push(car)
+    var road_start = this.dim_y - this.starting_strip_y - 5*this.lane_y;
+    var road_end = this.dim_y - this.starting_strip_y;
+    var vehicle_y = road_start;
+    for (var i = 1; i < 6; i++) {
+      if (i % 2 == 0){
+        car_x = 0;
+        for (var j = 0; j < 8; j++) {
+          if (j!== 4 && j !==0){
+            var vehicle = new Frogger.Car({
+              pos: [car_x, vehicle_y],
+              game: this
+            })
+            this.vehicles.push(vehicle)
+          }
+          car_x += 100
+        };
+      } else {
+        truck_x = 0;
+        for (var k = 0; k < 4; k++) {
+          var vehicle = new Frogger.Truck({
+            pos: [truck_x, vehicle_y],
+            game: this
+          })
+          this.vehicles.push(vehicle);
+          truck_x += 200;
+        }
+      }
+      vehicle_y += this.lane_y;
+    };
   };
 
   Game.prototype.addFloatingObjects = function(){
