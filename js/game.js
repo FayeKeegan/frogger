@@ -16,9 +16,9 @@
     this.addVehicles();
   };
 
-  Game.LILY_PAD_Y = 50;
-  Game.RIVER_BANK_Y = 50;
-  Game.STARTING_STRIP_Y = 50;
+  Game.LILY_PAD_Y = 70;
+  Game.RIVER_BANK_Y = 70;
+  Game.STARTING_STRIP_Y = 70;
 
   Game.prototype.draw = function (ctx) {
     // draw lily pad
