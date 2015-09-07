@@ -11,7 +11,7 @@
 
 	BigLog.COLOR = "#9C661F";
 	BigLog.DIM_X = 150;
-	BigLog.VEL = [15,0]
+	BigLog.VEL = [5,0]
 
 	BigLog.prototype.wrap = function(canvas_x){
 		var x = 0 - this.dim_x;

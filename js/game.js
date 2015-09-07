@@ -79,13 +79,26 @@
     var river_start = this.lily_pad_y;
     var river_end = this.lily_pad_y + 6 * this.lane_y;
     var log_y = river_start;
-    debugger
-    for (var i = 0; i < 5; i++) {
-      var bigLog = new Frogger.BigLog({
-        pos: [0, log_y],
-        game: this
-      })
-      this.floatingObjects.push(bigLog);
+    for (var i = 1; i < 6; i++) {
+      if (i % 2 == 0){
+        small_log_x = 0;
+        for (var j = 0; j < 8; j++) {
+          if (j!== 4 && j !==0){
+            var log = new Frogger.SmallLog({
+              pos: [small_log_x, log_y],
+              game: this
+            })
+            this.floatingObjects.push(log)
+          }
+          small_log_x += 100
+        };
+      } else {
+        var log = new Frogger.BigLog({
+          pos: [0, log_y],
+          game: this
+        }) 
+        this.floatingObjects.push(log)
+      }
       log_y += this.lane_y;
     };
   };

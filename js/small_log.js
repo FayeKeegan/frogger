@@ -11,7 +11,7 @@
 
 	SmallLog.COLOR = "#9C661F";
 	SmallLog.DIM_X = 75;
-	SmallLog.VEL = [-20,0]
+	SmallLog.VEL = [-10,0]
 
 	SmallLog.prototype.wrap = function(canvas_x){
 		var x = canvas_x;
