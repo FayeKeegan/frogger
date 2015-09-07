@@ -12,6 +12,8 @@
     this.road_y = this.lane_y * 5
     this.floatingObjects = [];
     this.addFloatingObjects();
+    this.vehicles = [];
+    this.addVehicles();
   };
 
   Game.LILY_PAD_Y = 50;
@@ -50,6 +52,10 @@
     this.floatingObjects.forEach( function(floatingObject){
       floatingObject.draw(ctx);
     });
+    //draw vehicles
+    this.vehicles.forEach( function(vehicle){
+      vehicle.draw(ctx);
+    });
   };
   
   Game.prototype.step = function(){
@@ -63,6 +69,12 @@
           floatingObject.wrap(this.dim_x)
         }
       }.bind(this));
+    this.vehicles.forEach( function(vehicle){
+      vehicle.move();
+        if (!this.onCanvas(vehicle)){
+          vehicle.wrap(this.dim_x)
+        }
+      }.bind(this));
   };
 
   Game.prototype.onCanvas = function(object){
@@ -73,6 +85,14 @@
     } else {
       return true
     }
+  };
+
+  Game.prototype.addVehicles = function(){
+    var car = new Frogger.Car({
+      pos: [10, 10],
+      game: this
+    })
+    this.vehicles.push(car)
   };
 
   Game.prototype.addFloatingObjects = function(){
