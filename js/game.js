@@ -10,15 +10,16 @@
     this.lane_y = (this.dim_y - this.river_bank_y - this.lily_pad_y - this.starting_strip_y) / 10
     this.river_y = this.lane_y * 5
     this.road_y = this.lane_y * 5
+    this.addFrog();
     this.floatingObjects = [];
     this.addFloatingObjects();
     this.vehicles = [];
     this.addVehicles();
   };
 
-  Game.LILY_PAD_Y = 70;
-  Game.RIVER_BANK_Y = 70;
-  Game.STARTING_STRIP_Y = 70;
+  Game.LILY_PAD_Y = 60;
+  Game.RIVER_BANK_Y = 60;
+  Game.STARTING_STRIP_Y = 60;
 
   Game.prototype.draw = function (ctx) {
     // draw lily pad
@@ -75,6 +76,10 @@
           vehicle.wrap(this.dim_x)
         }
       }.bind(this));
+  };
+
+  Game.prototype.addFrog = function(){
+    // this.frog = new Frogger.Frog();
   };
 
   Game.prototype.onCanvas = function(object){
