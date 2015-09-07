@@ -4,13 +4,12 @@
   var Frog = Frogger.Frog = function(options){
     this.game = options.game;
     this.radius = Frog.RADIUS;
-    this.center = [this.game.dim_x / 2, this.game.dim_y - 60]
-    this.pos = [this.center[0], this.center[1] + this.radius]
+    this.pos = [this.game.dim_x / 2, this.game.dim_y - 15]
     this.color = Frog.COLOR;
   };
 
   Frog.COLOR = "#008B45";
-  Frog.RADIUS = 15;
+  Frog.RADIUS = 10;
 
   Frog.prototype.leap = function(direction){
     this.pos[0] += direction[0] * this.game.lane_y;

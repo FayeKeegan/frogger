@@ -19,7 +19,6 @@
   View.prototype.bindKeyHandlers = function () {
     var game = this.game;
     key("up", function() {
-      debugger
       game.frog.leap([0, -1])
     });
     key("down", function() {
