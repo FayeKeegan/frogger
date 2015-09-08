@@ -1,10 +1,18 @@
 body {
   background-color: white;
-  font-family: Helvetica;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
   text-align: center;
-  color: #333
+  color: rgb(68, 68, 68);
+}
+
+canvas {
+	display: none;
+}
+
+.game-over-message {
+	display: none
 }

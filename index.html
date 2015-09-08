@@ -8,8 +8,29 @@
     <title>Frogger</title>
   </head>
   <body>
-    <h1> Frogger </h1>
-    <canvas id="game-canvas"></canvas>
+    <div class="container-fixed">
+      <div class="row">
+        <h1 class='game-title'> Frogger </h1>
+      </div>
+      <div class='game-score row'>
+        Score: <span>0</span>
+      </div>
+      <div class="game-screen row">
+        <canvas id="game-canvas">
+        </canvas>
+        <div class="welcome-message">
+          <br>
+          <h4> Welcome to Frogger. </h4>
+          <br>
+          <h4> Use the arrow keys to get your frog across the road, across the river and onto the lilypads </h4>
+          <br>
+          <h4> ... watch out for cars and trucks! and use the logs to get across the rough water. </h4>
+          <br>
+          <h2> <div class="btn btn-default start-button"> Begin</div> </h2>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-2.1.1.js"></script>
     <script src="js/keymaster.js"></script>
     <script src="js/util.js"></script>
     <script src="js/game.js"></script>
@@ -25,13 +46,18 @@
     <script src="js/big_log.js"></script>
     <script src="js/small_log.js"></script>
     <script>
-      var canvasEl = document.getElementById("game-canvas");
-      var dim_y = 480
-      var dim_x = 800
-      canvasEl.height = dim_y;
-      canvasEl.width = dim_x;
-      view = new Frogger.View( new Frogger.Game(dim_y, dim_x), canvasEl.getContext('2d'))
-      view.start();
+      $(".start-button").click(function(){
+        $(".welcome-message").css({"display": "none"})
+        $("canvas").css({"display": "inline-block"});
+        var canvasEl = document.getElementById("game-canvas");
+        var dim_y = 480
+        var dim_x = 800
+        canvasEl.height = dim_y;
+        canvasEl.width = dim_x;
+        view = new Frogger.View( new Frogger.Game(dim_y, dim_x), canvasEl.getContext('2d'))
+        view.start();
+      });
+
     </script>
   </body>
 </html>
