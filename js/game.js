@@ -16,6 +16,8 @@
     this.addFloatingObjects();
     this.vehicles = [];
     this.addVehicles();
+    this.lilypads = [];
+    this.addLilypads();
   };
 
   Game.LILY_PAD_Y = 60;
@@ -23,7 +25,7 @@
   Game.STARTING_STRIP_Y = 60;
 
   Game.prototype.draw = function (ctx) {
-    // draw lily pad
+    // draw lily landing pad
     ctx.fillStyle = "#71C671";
     ctx.fillRect(0,
       0, this.dim_x,
@@ -58,6 +60,10 @@
     this.vehicles.forEach( function(vehicle){
       vehicle.draw(ctx);
     });
+    //draw lilypads
+    this.lilypads.forEach(function(lilypad){
+      lilypad.draw(ctx)
+    })
     //draw frog
     this.frog.draw(ctx);
   };
@@ -82,8 +88,10 @@
           vehicle.wrap(this.dim_x)
         }
       }.bind(this));
-    if (this.frogInRiver){
+    if (this.frogInRiver()){
       this.frog.move();
+    } else {
+      this.frog.vel = [0,0]
     }
   };
 
@@ -132,6 +140,20 @@
         }
       }
       vehicle_y += this.lane_y;
+    };
+  };
+
+  Game.prototype.addLilypads = function(){
+    var pad_y = this.lane_y;
+    var pad_x = (this.dim_x / 10) / 2;
+    for (var i = 0; i < 5; i++) {
+      console.log(pad_x);
+      var lilypad = new Frogger.Lilypad({
+        pos: [pad_x, pad_y],
+        game: this
+      })
+      this.lilypads.push(lilypad);
+      pad_x += this.dim_x / 5;
     };
   };
 
