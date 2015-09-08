@@ -2,6 +2,7 @@
   var Frogger = window.Frogger = window.Frogger || {};
 
   var Game = Frogger.Game = function(dim_y, dim_x) {
+    this.score = 0;
     this.over = false;
     this.dim_y = dim_y;
     this.dim_x = dim_x;
@@ -70,6 +71,9 @@
   
   Game.prototype.step = function(){
     this.moveObjects();
+    if (this.frogOnLilypad()){
+      debugger
+    }
     if (this.frogInRiver() && !this.frogOnFloatingObject() || this.frogSmooshed()){
       this.over = true;
     }
@@ -205,6 +209,7 @@
         if (frogCenter[1] > floatingObject.pos[1] && frogCenter[1] < floatingObject.pos[1] + floatingObject.dim_y){
           this.frog.vel = floatingObject.vel
           floating = true;
+
         }
       }
     }.bind(this))
@@ -213,8 +218,8 @@
 
   Game.prototype.frogSmooshed = function(){
     var frogCenter = this.frog.pos;
-    var frogLeft = this.frog.pos[0] - this.frog.radius;
-    var frogRight = this.frog.pos[0] + this.frog.radius;
+    var frogLeft = this.frog.pos[0] - this.frog.radius / 2;
+    var frogRight = this.frog.pos[0] + this.frog.radius / 2;
     var smooshed = false;
     this.vehicles.forEach(function(vehicle){
       if ((frogRight >= vehicle.pos[0] &&  frogRight <= vehicle.pos[0] + vehicle.dim_x) ||
@@ -228,5 +233,23 @@
     return smooshed;
   }
 
+  Game.prototype.frogOnLilypad = function(){
+    var frogX = this.frog.pos[0];
+    var frogY = this.frog.pos[1];
+    var onLilyPad = false;
+    this.lilypads.forEach(function(lilypad){
+      var lilyLeft = lilypad.pad_x - lilypad.radius;
+      var lilyRight = lilypad.pad_x + lilypad.radius;
+      var lilyTop = lilypad.pad_y - lilypad.radius;
+      var lilyBottom = lilypad.pad_y + lilypad.radius;
+      if (frogX > lilyLeft  && frogX < lilyRight + lilypad.dim_x){
+        if (frogY > lilyTop && frogY < lilyBottom){
+          this.score += 1
+          onLilyPad = true;
+        }
+      }
+    }.bind(this))
+    return onLilyPad;
+  }
 
 })();
