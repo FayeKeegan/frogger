@@ -2,6 +2,7 @@
   var Frogger = window.Frogger = window.Frogger || {};
 
   var Game = Frogger.Game = function(dim_y, dim_x) {
+    this.over = false;
     this.dim_y = dim_y;
     this.dim_x = dim_x;
     this.lily_pad_y = Game.LILY_PAD_Y;
@@ -63,6 +64,9 @@
   
   Game.prototype.step = function(){
     this.moveObjects();
+    if (this.frogInRiver() && !this.frogOnFloatingObject() || this.frogSmooshed()){
+      this.over = true;
+    }
   };
 
   Game.prototype.moveObjects = function () {
@@ -78,6 +82,9 @@
           vehicle.wrap(this.dim_x)
         }
       }.bind(this));
+    if (this.frogInRiver){
+      this.frog.move();
+    }
   };
 
   Game.prototype.addFrog = function(){
@@ -159,6 +166,44 @@
       log_y += this.lane_y;
     };
   };
+
+  Game.prototype.frogInRiver = function(){
+    var riverStart = this.lily_pad_y
+    var riverEnd = this.lily_pad_y + (5 * this.lane_y)
+    return ((this.frog.pos[1] < riverEnd) && (this.frog.pos[1] > riverStart))
+  }
+
+  Game.prototype.frogOnFloatingObject = function(){
+    var frogCenter = this.frog.pos;
+    var frogLeft = this.frog.pos[0] - this.frog.radius;
+    var frogRight = this.frog.pos[0] + this.frog.radius;
+    var floating = false;
+    this.floatingObjects.forEach(function(floatingObject){
+      if (frogLeft > floatingObject.pos[0] &&  frogRight < floatingObject.pos[0] + floatingObject.dim_x){
+        if (frogCenter[1] > floatingObject.pos[1] && frogCenter[1] < floatingObject.pos[1] + floatingObject.dim_y){
+          this.frog.vel = floatingObject.vel
+          floating = true;
+        }
+      }
+    }.bind(this))
+    return floating;
+  }
+
+  Game.prototype.frogSmooshed = function(){
+    var frogCenter = this.frog.pos;
+    var frogLeft = this.frog.pos[0] - this.frog.radius;
+    var frogRight = this.frog.pos[0] + this.frog.radius;
+    var smooshed = false;
+    this.vehicles.forEach(function(vehicle){
+      if (frogLeft > vehicle.pos[0] &&  frogRight < vehicle.pos[0] + vehicle.dim_x){
+        if (frogCenter[1] > vehicle.pos[1] && frogCenter[1] < vehicle.pos[1] + vehicle.dim_y){
+          this.frog.vel = vehicle.vel
+          smooshed = true;
+        }
+      }
+    }.bind(this))
+    return smooshed;
+  }
 
 
 })();

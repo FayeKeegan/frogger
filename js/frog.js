@@ -2,6 +2,8 @@
   var Frogger = window.Frogger = window.Frogger || {};
 
   var Frog = Frogger.Frog = function(options){
+    Frogger.MovingObject.call(this, options);
+    this.vel = Frog.VEL;
     this.game = options.game;
     this.radius = Frog.RADIUS;
     this.pos = [this.game.dim_x / 2, this.game.dim_y - 15]
@@ -10,6 +12,9 @@
 
   Frog.COLOR = "#008B45";
   Frog.RADIUS = 10;
+  Frog.VEL = [0,0];
+
+  Frogger.Util.inherits(Frogger.Frog, Frogger.MovingObject);
 
   Frog.prototype.leap = function(direction){
     this.pos[0] += direction[0] * this.game.lane_y;

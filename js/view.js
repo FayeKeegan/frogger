@@ -10,9 +10,12 @@
   View.prototype.start = function () {
     var that = this;
     this.bindKeyHandlers();
-    setInterval(function(){
+    var gameInterval = setInterval(function(){
       that.game.step();
       that.game.draw(that.ctx);
+      if (that.game.over){
+        clearInterval(gameInterval);
+      }
     }, 60);
   };
 
