@@ -195,7 +195,8 @@
     var frogRight = this.frog.pos[0] + this.frog.radius;
     var smooshed = false;
     this.vehicles.forEach(function(vehicle){
-      if (frogLeft > vehicle.pos[0] &&  frogRight < vehicle.pos[0] + vehicle.dim_x){
+      if ((frogRight >= vehicle.pos[0] &&  frogRight <= vehicle.pos[0] + vehicle.dim_x) ||
+          (frogLeft >= vehicle.pos[0] &&  frogLeft <= vehicle.pos[0] + vehicle.dim_x)){
         if (frogCenter[1] > vehicle.pos[1] && frogCenter[1] < vehicle.pos[1] + vehicle.dim_y){
           this.frog.vel = vehicle.vel
           smooshed = true;

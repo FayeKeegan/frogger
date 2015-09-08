@@ -14,7 +14,7 @@
 	Truck.COLOR = "#FFF68F";
 	Truck.DIM_X = 80;
 	Truck.VEL = [-3,0];
-	Truck.PADDING = 3;
+	Truck.PADDING = 2;
 
 	Truck.prototype.draw = function(ctx){
 		var x = this.pos[0] + this.padding;

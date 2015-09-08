@@ -14,7 +14,7 @@
 	Car.COLOR = "#FF6A6A";
 	Car.DIM_X = 40;
 	Car.VEL = [10,0];
-	Car.PADDING = 3;
+	Car.PADDING = 2;
 
 
 	Car.prototype.draw = function(ctx){

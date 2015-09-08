@@ -14,7 +14,7 @@
 	Log.COLOR = "#9C661F";
 	Log.DIM_X = 100;
 	Log.VEL = [1,0];
-	Log.PADDING = 3;
+	Log.PADDING = 2;
 
 	Log.prototype.draw = function(ctx){
 		var x = this.pos[0] + this.padding;
