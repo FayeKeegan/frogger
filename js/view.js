@@ -13,10 +13,20 @@
     var gameInterval = setInterval(function(){
       that.game.step();
       that.game.draw(that.ctx);
-      if (that.game.over){
+      if (that.game.won){
+        $("#game-canvas").removeClass("revealed").addClass("hidden");
         clearInterval(gameInterval);
+        $(".game-won-message").removeClass("hidden").addClass("revealed");
+      } else if (that.game.lost){
+        $("#game-canvas").removeClass("revealed").addClass("hidden");
+        clearInterval(gameInterval);
+        $(".game-over-message").removeClass("hidden").addClass("revealed");
       }
     }, 60);
+  };
+
+  View.prototype.clearGame = function(){
+
   };
 
   View.prototype.bindKeyHandlers = function () {

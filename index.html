@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
     <link rel="stylesheet" type="text/css" href="css/frogger.css">
     <title>Frogger</title>
   </head>
@@ -13,12 +13,14 @@
         <h1 class='game-title'> Frogger </h1>
       </div>
       <div class='game-score row'>
-        Score: <span>0</span>
+        <h2>
+          Score: <span id="score">0</span>   Lives: <span id="lives"> 3</span>
+        </h2>
       </div>
       <div class="game-screen row">
-        <canvas id="game-canvas">
+        <canvas id="game-canvas" class="hidden">
         </canvas>
-        <div class="welcome-message">
+        <div class="welcome-message revealed">
           <br>
           <h4> Welcome to Frogger. </h4>
           <br>
@@ -28,6 +30,26 @@
           <br>
           <h2> <div class="btn btn-default start-button"> Begin</div> </h2>
         </div>
+        <div class="game-over-message hidden">
+          <br>
+          <h4> Oh no. Your frog didn't make it. </h4>
+          <br>
+          <h4> Would you like to play again? </h4>
+          <br>
+          <br>
+          <h2> <div class="btn btn-default start-button"> Yes</div> </h2>
+        </div>
+
+        <div class="game-won-message hidden">
+          <br>
+          <h4> WELL DONE. YOU WON. </h4>
+          <br>
+          <h4> Would you like to play again? </h4>
+          <br>
+          <br>
+          <h2> <div class="btn btn-default start-button"> Yes</div> </h2>
+        </div>
+
       </div>
     </div>
     <script src="js/jquery-2.1.1.js"></script>
@@ -47,8 +69,8 @@
     <script src="js/small_log.js"></script>
     <script>
       $(".start-button").click(function(){
-        $(".welcome-message").css({"display": "none"})
-        $("canvas").css({"display": "inline-block"});
+        $(".welcome-message").removeClass("revealed").addClass("hidden");
+        $("#game-canvas").removeClass("hidden").addClass("revealed");
         var canvasEl = document.getElementById("game-canvas");
         var dim_y = 480
         var dim_x = 800

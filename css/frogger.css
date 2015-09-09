@@ -9,10 +9,10 @@ body {
   color: rgb(68, 68, 68);
 }
 
-canvas {
-	display: none;
+.hidden {
+  display: none;
 }
 
-.game-over-message {
-	display: none
+.revealed {
+  display: inline-block;
 }

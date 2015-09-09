@@ -2,6 +2,7 @@
 	var Frogger = window.Frogger = window.Frogger || {};
 
 	var Lilypad = Frogger.Lilypad = function(options){
+		this.scored = false;
 		this.pos = options.pos;
 		this.game = options.game;
 		this.dim_x = this.game.dim_x / 10;
@@ -29,7 +30,7 @@
 	  ctx.beginPath();
     ctx.arc(this.pad_x,this.pad_y,this.radius,Math.PI/7,-Math.PI/7,false);
     ctx.lineTo(this.pad_x,this.pad_y);
-    ctx.fillStyle = "#008B45";
+    ctx.fillStyle = this.scored ? "pink" : "#008B45";
     ctx.fill();
 	}
 

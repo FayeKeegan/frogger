@@ -3,7 +3,10 @@
 
   var Game = Frogger.Game = function(dim_y, dim_x) {
     this.score = 0;
+    this.lives = 3;
+    this.lost = false;
     this.over = false;
+    this.won = false;
     this.dim_y = dim_y;
     this.dim_x = dim_x;
     this.lily_pad_y = Game.LILY_PAD_Y;
@@ -69,15 +72,34 @@
     this.frog.draw(ctx);
   };
   
-  Game.prototype.step = function(){
+  Game.prototype.step = function() {
     this.moveObjects();
     if (this.frogOnLilypad()){
-      debugger
+      this.updateScore();
     }
     if (this.frogInRiver() && !this.frogOnFloatingObject() || this.frogSmooshed()){
-      this.over = true;
+      this.lives -= 1
+      this.updateLives();
+    }
+    if (this.score === 5){
+      this.won = true;
+    }
+    if (this.won || this.lives === 0){
+      this.lost = true;
     }
   };
+
+  Game.prototype.gameOverMessage = function(){
+    $("game-over-message").removeClass("hidden").addClass('')
+  }
+
+
+  Game.prototype.updateLives = function(){
+    $("#lives").text(this.lives)
+    this.frog = new Frogger.Frog({
+      game: this
+    })
+  }
 
   Game.prototype.moveObjects = function () {
     this.floatingObjects.forEach( function(floatingObject){
@@ -109,9 +131,9 @@
     var left = object.pos[0];
     var right = object.pos[0] + object.dim_x;
     if ((left < 0 && right < 0)|| left > this.dim_x + 1){
-      return false
+      return false;
     } else {
-      return true
+      return true;
     }
   };
 
@@ -244,8 +266,11 @@
       var lilyBottom = lilypad.pad_y + lilypad.radius;
       if (frogX > lilyLeft  && frogX < lilyRight + lilypad.dim_x){
         if (frogY > lilyTop && frogY < lilyBottom){
-          this.score += 1
-          onLilyPad = true;
+          if (!lilypad.scored){
+            this.score += 1;
+            onLilyPad = true;
+            lilypad.scored = true; 
+          }
         }
       }
     }.bind(this))
