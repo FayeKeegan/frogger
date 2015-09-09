@@ -108,7 +108,8 @@
   Game.prototype.updateLives = function(){
     this.message = new Frogger.Message({
       game: this,
-      message: "Ruh Roh, one life lost. " + "You have " + this.lives + " left. Try again!"
+      message: "Ruh Roh, one life lost. " + "You have " + this.lives + " left. Try again!",
+      alertType: "bad"
     })
     setTimeout(function(){
       this.message = false
