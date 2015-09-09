@@ -93,6 +93,12 @@
     $("game-over-message").removeClass("hidden").addClass('')
   }
 
+  Game.prototype.updateScore = function(){
+    $("#score").text(this.score)
+    this.frog = new Frogger.Frog({
+      game: this
+    })
+  }
 
   Game.prototype.updateLives = function(){
     $("#lives").text(this.lives)

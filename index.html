@@ -21,12 +21,11 @@
         <canvas id="game-canvas" class="hidden">
         </canvas>
         <div class="welcome-message revealed">
-          <br>
           <h4> Welcome to Frogger. </h4>
-          <br>
-          <h4> Use the arrow keys to get your frog across the road, across the river and onto the lilypads </h4>
-          <br>
+          <h4> Use the arrow keys to get your frog across the road, across the river and onto the <strong>LILYPADS</strong></h4>
           <h4> ... watch out for cars and trucks! and use the logs to get across the rough water. </h4>
+          <img src="images/lilypad.png" width="200px">
+          <br>
           <br>
           <h2> <div class="btn btn-default start-button"> Begin</div> </h2>
         </div>
@@ -69,7 +68,7 @@
     <script src="js/small_log.js"></script>
     <script>
       $(".start-button").click(function(){
-        $(".welcome-message").removeClass("revealed").addClass("hidden");
+        $(".welcome-message, .game-over-message, game-won-message").removeClass("revealed").addClass("hidden");
         $("#game-canvas").removeClass("hidden").addClass("revealed");
         var canvasEl = document.getElementById("game-canvas");
         var dim_y = 480
