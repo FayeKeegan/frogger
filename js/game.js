@@ -99,6 +99,14 @@
   }
 
   Game.prototype.updateScore = function(){
+    this.message = new Frogger.Message({
+      game: this,
+      message: "You scored! Congrats!" + " Current score is " + this.score + ". Only need 5 to win!",
+      alertType: "good"
+    })
+    setTimeout(function(){
+      this.message = false
+    }.bind(this), 3000)
     $("#score").text(this.score)
     this.frog = new Frogger.Frog({
       game: this
