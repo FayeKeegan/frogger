@@ -16,3 +16,7 @@ body {
 .revealed {
   display: inline-block;
 }
+
+.panel:not(.panel-success) {
+  width: 800px;
+}
