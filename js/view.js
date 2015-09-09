@@ -25,9 +25,6 @@
     }, 60);
   };
 
-  View.prototype.clearGame = function(){
-
-  };
 
   View.prototype.bindKeyHandlers = function () {
     var game = this.game;

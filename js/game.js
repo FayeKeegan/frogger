@@ -3,6 +3,7 @@
 
   var Game = Frogger.Game = function(dim_y, dim_x) {
     this.score = 0;
+    this.message = false;
     this.lives = 3;
     this.lost = false;
     this.over = false;
@@ -70,6 +71,10 @@
     })
     //draw frog
     this.frog.draw(ctx);
+    //draw message
+    if (this.message){
+      this.message.draw(ctx)
+    }
   };
   
   Game.prototype.step = function() {
@@ -101,6 +106,13 @@
   }
 
   Game.prototype.updateLives = function(){
+    this.message = new Frogger.Message({
+      game: this,
+      message: "Ruh Roh, one life lost"
+    })
+    setTimeout(function(){
+      this.message = false
+    }, 1000)
     $("#lives").text(this.lives)
     this.frog = new Frogger.Frog({
       game: this
