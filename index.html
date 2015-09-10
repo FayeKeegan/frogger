@@ -9,57 +9,61 @@
     <title>Frogger</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="panel panel-success">
-          <div class='panel-heading'>
-              <h2 class='game-title'> Frogger </h2>
-          </div>
-          <div class='panel-content'>
-            <h3>
-            Score: <span id="score">0</span>   Lives: <span id="lives"> 3</span>
-            </h3>
+        <div class='col col-xs-12'>
+          <div class="panel panel-success">
+            <div class='panel-heading'>
+                <h2 class='game-title'> Frogger </h2>
+            </div>
+            <div class='panel-content'>
+              <h3>
+              Score: <span id="score">0</span>   Lives: <span id="lives"> 3</span>
+              </h3>
+            </div>
           </div>
         </div>
       </div>
       <div class="game-screen row">
-        <canvas id="game-canvas" class="hidden">
-        </canvas>
-        <div class="welcome-message revealed panel panel-primary" >
-          <div class='panel-heading'>
-            <h4> Welcome to Frogger. </h4>
+        <div class='col col-xs-12'>
+          <canvas id="game-canvas" class="hidden">
+          </canvas>
+          <div class="welcome-message revealed panel panel-primary" >
+            <div class='panel-heading'>
+              <h4> Welcome to Frogger. </h4>
+            </div>
+            <div class='panel-content'>
+              <h4> Use the arrow keys to get your frog across the road, <br>
+                  across the river and onto the <strong>LILYPADS</strong></h4><br><br>
+              <h4> Watch out for cars and trucks! <br> and use the logs to get across the rough water. </h4>
+              <img src="images/lilypad.png" width="200px">
+              <h2> <div class="btn btn-default start-button"> Begin</div> </h2>
+            </div>
           </div>
-          <div class='panel-content'>
-            <h4> Use the arrow keys to get your frog across the road, <br>
-                across the river and onto the <strong>LILYPADS</strong></h4><br><br>
-            <h4> Watch out for cars and trucks! <br> and use the logs to get across the rough water. </h4>
-            <img src="images/lilypad.png" width="200px">
-            <h2> <div class="btn btn-default start-button"> Begin</div> </h2>
+          <div class="game-over-message hidden panel panel-danger">
+            <div class='panel-heading'>
+              Ruh Roh.
+            </div>
+            <div class='panel-content'>
+              <br>
+              <h4> Oh no. Your frog didn't make it. </h4>
+              <br>
+              <h4> Would you like to play again? </h4>
+              <br>
+              <br>
+              <h2> <div class="btn btn-default start-button"> Yes</div> </h2>
+            </div>
           </div>
-        </div>
-        <div class="game-over-message hidden panel panel-danger">
-          <div class='panel-heading'>
-            Ruh Roh.
-          </div>
-          <div class='panel-content'>
+
+          <div class="game-won-message hidden">
             <br>
-            <h4> Oh no. Your frog didn't make it. </h4>
+            <h4> WELL DONE. YOU WON. </h4>
             <br>
             <h4> Would you like to play again? </h4>
             <br>
             <br>
             <h2> <div class="btn btn-default start-button"> Yes</div> </h2>
           </div>
-        </div>
-
-        <div class="game-won-message hidden">
-          <br>
-          <h4> WELL DONE. YOU WON. </h4>
-          <br>
-          <h4> Would you like to play again? </h4>
-          <br>
-          <br>
-          <h2> <div class="btn btn-default start-button"> Yes</div> </h2>
         </div>
 
       </div>
