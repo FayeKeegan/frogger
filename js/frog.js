@@ -25,6 +25,7 @@
 
   Frog.prototype.draw = function(ctx){
     this.drawBody(ctx);
+    this.drawLegs(ctx)
     this.drawEyes(ctx);
   };
 
@@ -55,6 +56,57 @@
     } else if (y === -1){
       return "up"
     }
+  }
+
+
+  Frog.prototype.drawLegs = function(ctx){
+    distToLeg = this.radius;
+    distBetweenLegs = this.radius * 3/4;
+    var direction = this.translateDirection();
+    var directionsHash = {};
+    if (direction === "up" || direction === "down"){
+      directionsHash = {"upLeftX" : this.pos[0] - distBetweenLegs,
+       "upRightX": this.pos[0] + distBetweenLegs,
+       "upLeftY": this.pos[1] - distToLeg,
+       "upRightY":this.pos[1] - distToLeg,
+       "downLeftX" : this.pos[0] - distBetweenLegs,
+       "downRightX": this.pos[0] + distBetweenLegs,
+       "downLeftY": this.pos[1] + distToLeg,
+       "downRightY":this.pos[1] + distToLeg
+     }
+    } else {
+      directionsHash = {"upLeftX" : this.pos[0] - distBetweenLegs,
+       "upRightX": this.pos[0] + distBetweenLegs,
+       "upLeftY": this.pos[1] - distToLeg,
+       "upRightY":this.pos[1] - distToLeg,
+       "downLeftX" : this.pos[0] - distBetweenLegs,
+       "downRightX": this.pos[0] + distBetweenLegs,
+       "downLeftY": this.pos[1] + distToLeg,
+       "downRightY":this.pos[1] + distToLeg
+     }
+    }
+    var upLeftX = directionsHash["upLeftX"];
+    var upLeftY = directionsHash["upLeftY"];
+    var upRightX = directionsHash["upRightX"];
+    var upRightY = directionsHash["upRightY"];
+    var downLeftX = directionsHash["downLeftX"];
+    var downLeftY = directionsHash["downLeftY"];
+    var downRightX = directionsHash["downRightX"];
+    var downRightY = directionsHash["downRightY"];
+    this.drawLeg(ctx, [upLeftX, upLeftY]);
+    this.drawLeg(ctx, [upRightX, upRightY]);
+    this.drawLeg(ctx, [downLeftX, downLeftY]);
+    this.drawLeg(ctx, [downRightX, downRightY]);
+  }
+
+  Frog.prototype.drawLeg = function(ctx, pos){
+    var path = new Path2D();
+    var endAngle = Math.PI;
+    ctx.beginPath();
+    ctx.arc(pos[0],pos[1],4,Math.PI,-Math.PI,false);
+    ctx.lineTo(pos[0],pos[1]);
+    ctx.fillStyle = "pink"
+    ctx.fill();
   }
 
   Frog.prototype.drawEyes = function(ctx){
@@ -97,7 +149,7 @@
     ctx.beginPath();
     ctx.arc(pos[0],pos[1],3,Math.PI,-Math.PI,false);
     ctx.lineTo(pos[0],pos[1]);
-    ctx.fillStyle = "white"
+    ctx.fillStyle = "white";
     ctx.fill();
     var path = new Path2D();
     var endAngle = Math.PI;

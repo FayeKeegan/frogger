@@ -13,9 +13,9 @@
     this.lily_pad_y = Game.LILY_PAD_Y;
     this.river_bank_y = Game.RIVER_BANK_Y;
     this.starting_strip_y = Game.STARTING_STRIP_Y;
-    this.lane_y = (this.dim_y - this.river_bank_y - this.lily_pad_y - this.starting_strip_y) / 10
-    this.river_y = this.lane_y * 5
-    this.road_y = this.lane_y * 5
+    this.lane_y = (this.dim_y - this.river_bank_y - this.lily_pad_y - this.starting_strip_y) / 10;
+    this.river_y = this.lane_y * 5;
+    this.road_y = this.lane_y * 5;
     this.addFrog();
     this.floatingObjects = [];
     this.addFloatingObjects();
@@ -82,7 +82,11 @@
     if (this.frogOnLilypad()){
       this.updateScore();
     }
-    if (this.frogInRiver() && !this.frogOnFloatingObject() || this.frogSmooshed()){
+    if (this.frogDrowned()){
+      this.lives -= 1;
+      this.updateLives();
+    }
+    if (this.frogSmooshed() || this.frogCrushed()) {
       this.lives -= 1
       this.updateLives();
     }
@@ -200,7 +204,6 @@
     var pad_y = this.lane_y;
     var pad_x = (this.dim_x / 10) / 2;
     for (var i = 0; i < 5; i++) {
-      console.log(pad_x);
       var lilypad = new Frogger.Lilypad({
         pos: [pad_x, pad_y],
         game: this
@@ -248,6 +251,10 @@
     return ((this.frog.pos[1] < riverEnd) && (this.frog.pos[1] > riverStart))
   }
 
+  Game.prototype.frogDrowned = function(){
+    return this.frogInRiver() && !this.frogOnFloatingObject();
+  };
+
   Game.prototype.frogOnFloatingObject = function(){
     var frogCenter = this.frog.pos;
     var frogLeft = this.frog.pos[0] - this.frog.radius;
@@ -261,9 +268,13 @@
 
         }
       }
-    }.bind(this))
+    }.bind(this));
     return floating;
-  }
+  };
+
+  Game.prototype.frogCrushed = function(){
+    return this.frog.pos[1] < 60 && !this.frogOnLilypad();
+  };
 
   Game.prototype.frogSmooshed = function(){
     var frogCenter = this.frog.pos;
@@ -291,7 +302,7 @@
       var lilyRight = lilypad.pad_x + lilypad.radius;
       var lilyTop = lilypad.pad_y - lilypad.radius;
       var lilyBottom = lilypad.pad_y + lilypad.radius;
-      if (frogX > lilyLeft  && frogX < lilyRight + lilypad.dim_x){
+      if (frogX > lilyLeft  && frogX < lilyRight){
         if (frogY > lilyTop && frogY < lilyBottom){
           if (!lilypad.scored){
             this.score += 1;

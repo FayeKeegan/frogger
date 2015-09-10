@@ -28,16 +28,20 @@
 
   View.prototype.bindKeyHandlers = function () {
     var game = this.game;
-    key("up", function() {
+    key("up", function(e) {
+      e.preventDefault();
       game.frog.leap([0, -1])
     });
-    key("down", function() {
+    key("down", function(e) {
+      e.preventDefault();
       game.frog.leap([0, 1])
     });
-    key("left", function() {
+    key("left", function(e) {
+      e.preventDefault();
       game.frog.leap([-1, 0])
     });
-    key("right", function() {
+    key("right", function(e) {
+      e.preventDefault();
       game.frog.leap([1, 0])
     });
   };
