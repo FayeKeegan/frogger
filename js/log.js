@@ -11,7 +11,7 @@
 
 	Frogger.Util.inherits(Frogger.Log, Frogger.FloatingObject);
 
-	Log.COLOR = "#9C661F";
+	Log.COLOR = "#975121";
 	Log.DIM_X = 100;
 	Log.VEL = [1,0];
 	Log.PADDING = 2;

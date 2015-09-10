@@ -1,0 +1,883 @@
+/*------------------------------------
+	
+	Theme Name: Digital Music
+	Theme#: 303
+	File: Color 1
+	
+------------------------------------*/
+
+/*-----------------------------------
+		General
+-------------------------------------*/
+
+body {
+	font-family: Verdana, Geneva, Kalimati, sans-serif;	
+	font-size: 12px;
+	color: #000000;
+	background-color: #850B0C /*~ main.background-color */;
+}
+
+.content {
+	
+}
+
+#wrapper2 {
+	background-color: #cccccc;
+}
+
+.center { 
+	background: #ffffff; 
+}
+
+a:link {
+	color: #000000 /*~ link.color */;
+}
+
+a:visited {
+	color: #000000 /*~ link-visited.color */;
+}
+
+a:hover {
+	color: #555555 /*~ link-hover.color */;
+}
+
+
+
+
+/*---------------------------------------------------
+						Header
+-----------------------------------------------------*/
+
+.header {
+	font-family: Verdana, Geneva, Kalimati, sans-serif /*~ header.font */;
+	font-size: 12px /*~ header.size */;
+	color:#333333 /*~ header.color */;
+}
+
+.sf_extra1 {
+	
+}
+
+
+.sf_extra1 span {
+
+}
+
+/*-------------------------------
+		Header Content
+---------------------------------*/
+
+#header-content {
+	background-image: url(images/main_head_bkgd_1.jpg);
+	background-color: #F7921E;	
+}
+
+.sf_extra3 {
+	
+}
+
+.sf_extra3 span {
+	
+}
+
+#logo {
+	
+}
+
+#logo img {
+	
+}
+
+/*----------------------
+		Titles
+-----------------------*/
+
+.titles {
+	
+}
+
+.header .company-name {
+	font-weight: normal /*~ company-name.bold */;
+	font-family: Verdana, Geneva, Kalimati, sans-serif /*~ company-name.font */;
+	color:#333333 /*~ company-name.color */;
+	font-size: 30px /*~ company-name.size */;
+}
+
+.header .slogan {
+	font-weight: normal /*~ slogan.bold */;
+	font-family: Verdana, Geneva, Kalimati, sans-serif /*~ slogan.font */;
+	color: #ffffff /*~ slogan.color */;
+	font-size: 12px /*~ slogan.size */;
+}
+
+/*----------------------
+		End titles
+-----------------------*/
+
+
+/*----------------------
+		Address
+-----------------------*/
+
+.address {
+	background-color: #FFE26A;
+}
+
+.address ul {
+	
+}
+
+.address ul li {
+	
+}
+
+.address ul li span.adr { /*address */
+	
+}
+
+.address ul li span.tel { /*Telephone */
+	
+}
+
+.address ul li span.tel span.type { /*What type of telephone */
+	
+}
+
+.address ul li a:link, .address ul li a:visited  {
+	color: #333333 /*~ header.color */;
+}
+
+.address ul li a:hover {
+	color: #333333 /*~ header.color */;
+}
+
+.address ul li a.email, .address ul li a.email:visited {
+	
+}
+
+.address ul li a.email:hover {
+	
+}
+
+/*----------------------
+		End Address
+-----------------------*/
+
+.sf_extra4 {
+	
+}
+
+.sf_extra4 span {
+	
+}
+
+/*-------------------------------
+		End Header Content
+---------------------------------*/
+
+
+/*-------------------------------
+	"TOP" Navigation - Navigation can 
+	go on top or bottom of the 
+	header or in the sidebars
+---------------------------------*/
+
+
+.navigation1 {
+	background-color:#F7F7F7;
+	background-image:url(images/nav_bkgd_tile_1.jpg);
+	background-repeat:repeat;
+	border-top: 5px solid #f7921e;
+}
+
+.navigation1 ul {
+	
+}
+
+.navigation1 ul:after {
+    content: ".";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    font-size: 1px;
+    clear: both;
+}
+
+.navigation1 ul li {
+	
+}
+
+.navigation1 ul li a{
+	background-image:url(images/nav_right_edge_1.jpg);
+	background-repeat:no-repeat;
+	color:#000000 /*~ nav-menu.color */;	
+}
+
+.navigation1 ul li a:visited {
+	color:#000000 /*~ nav-menu.color */;	
+}
+
+.navigation1 ul li a:hover {
+	background-image:url(images/nav_right_edge_hilite_1.jpg);
+	background-repeat:repeat-x;
+	color:#000000 /*~ nav-menu-hover.color */;		
+}
+
+/*-------------------------------
+		End Navigation
+---------------------------------*/
+
+.sf_extra2 {
+	
+}
+
+.sf_extra2 span {
+	
+}
+
+
+/*---------------------------------------------------
+					End Header
+-----------------------------------------------------*/
+
+
+/*---------------------------------------------------
+					Search
+-----------------------------------------------------*/
+
+.quick-search {
+	background-color: #5B6D91;
+	border-bottom: 6px solid #ffffff;
+}
+
+.quick-search ul li {
+	
+}
+
+.quick-search ul li a:link {
+	color: #ffffff;
+}
+
+.quick-search ul li a:visited {
+	color: #ffffff;
+}
+
+.quick-search ul li a:hover {
+	color: #ffffff;
+}
+
+.container-left .textpadder {
+	
+}
+
+.quick-search-header {
+	color: #850B0C; 	
+}
+
+.quick-search-button {
+	color: #000000;
+	border-color: #ffffff;
+	background-color: #cccccc;
+	cursor: pointer;
+}
+
+.container-left .quick-search, 
+.container-right .quick-search {
+	background-image: url(images/main_head_bkgd_1.jpg);
+	border-bottom: 6px solid #ffffff;
+	padding: 2px 3px;
+}
+
+.quick-search ul li a:link {
+	color: #850B0C;
+}
+
+.quick-search ul li a:visited {
+	color: #850B0C;
+}
+
+.quick-search ul li a:hover {
+	color: #850B0C;
+}
+
+.container-left .quick-search h3, 
+.container-right .quick-search h3 {
+	
+}
+
+/*---------------------------------------------------
+					End Search
+-----------------------------------------------------*/
+
+
+/*---------------------------------------------------
+					Sidebars
+-----------------------------------------------------*/
+.container-left .content-block, 
+.container-right .content-block {
+	color: #000000;
+}
+
+.container-left .category-list {
+	
+}
+
+.container-right .category-list {
+	
+}
+
+.category-list-header {
+	color: #850B0C;
+}
+
+.category-list-header a, .category-list-header a:visited, .category-list-header a:hover  {
+	color: #850B0C;
+}
+
+.container-left .category-list h3, 
+.container-right .category-list h3 {
+	
+}
+
+.category-list ol {
+}
+
+.category-list ol li {
+	border-top: 1px solid #efefef;
+	border-left: 1px solid #a3a3a3;
+}
+
+.category-list ol li a {	
+	background-color: #BFBFBF;
+	border-bottom: 1px solid #A3A3A3;
+}
+
+.category-list ol li a:visited {
+	
+}
+
+.category-list ol li a:hover {
+	background-color: #cccccc;
+	border-bottom: 1px solid #A3A3A3;
+}
+
+.container-left .featured-item h3,
+.container-right .featured-item h3,
+.category-tracker h3 {
+	color: #850B0C;
+}
+
+.featured-product-header a:link {
+	color: #850B0C;
+	text-decoration:none;
+}
+
+.featured-product-header a:visited {
+	color: #850B0C;
+	text-decoration:none;
+}
+
+.featured-product-header a:hover {
+	color: #850B0C;
+	text-decoration:none;
+}
+
+.featured-item {
+	color: #000000;
+}
+
+.product {
+
+}
+
+.smallimage {
+	
+}
+
+.smallimage a img {
+	border: 1px solid #000000;
+}
+
+.shortdescription {
+	
+}
+
+.list {
+	
+}
+
+.list em {
+	 	
+}
+
+.sale {
+	color: #FF0000;
+}
+
+.sale em {
+
+}
+
+.featured-item-button {
+	
+}
+
+.product h4.title {
+	
+}
+
+/*---------------------------------------------------
+				  End Sidebars
+-----------------------------------------------------*/
+
+
+/*---------------------------------------------------
+					Wrapper 
+-----------------------------------------------------*/
+
+.wrapper1 {
+	
+}
+
+.wrapper2 {
+	
+}
+
+.center {
+	
+}
+
+.content {
+	
+}
+
+.content form {
+	
+}
+
+/*-------------------------------
+		Alert Messages
+---------------------------------*/
+
+#messages {
+	
+}
+
+#messages li {
+	
+}
+
+#messages li.info {
+	background-color: #DCE8FF;
+	border: 1px solid #4B5A7B;
+}
+
+#messages li.error {
+	background-color: #FFBBBB;
+	border: 1px solid red;
+}
+
+/*-------------------------------
+		End Alert Messages
+---------------------------------*/
+
+
+/*-------------------------------
+		Breadcrumbs
+---------------------------------*/
+
+#breadcrumbs {
+	margin-bottom: 7px;
+}
+
+.breadcurmb {
+	
+}
+
+.category {
+	
+}
+
+#breadcrumbs span.item {
+	
+}
+
+/*-------------------------------
+		End Breadcrumbs
+---------------------------------*/
+
+
+/*-------------------------------
+		Welcome
+---------------------------------*/
+
+.welcome {
+	
+}
+
+.welcome img {
+	
+}
+
+/*-------------------------------
+		End Welcome
+---------------------------------*/
+
+
+/*-------------------------------
+	  Search Result Controls / Paginator
+---------------------------------*/
+
+.search-result-controls {
+	
+}
+
+/*-------------------------------
+	End Search Result Controls
+---------------------------------*/
+
+
+
+/*-------------------------------
+	Category and Search Results
+---------------------------------*/
+
+.search-results .content-product {
+	border-style: solid;
+	border-width: 2px;
+	border-color: #F7921E;
+}
+
+
+
+#search {
+	
+}
+
+.content-category {
+	
+}
+
+.content-product { /*--the whole box - border overwrite--*/
+	border-color: #F7921E;
+}
+
+.search-results .content-product dd {
+	
+}
+
+.search-results .largeimage {
+	
+}
+
+.search-results .content-product .content-product-header a {
+
+}
+	
+.content-product-header { /*--Box top--*/
+	background-color: #F7921E;
+}
+
+.content-product-header a:link, .content-product-header a:visited, 
+.content-product-header a:active, .content-product-header a:hover {
+	color: #ffffff;
+}
+
+.btn {
+	
+}
+
+.btn:hover {
+	
+}
+
+dd.content-category-header h4 { /*--Category Title--*/
+	
+}
+
+.content-category-header a:link, 
+.content-category-header a:visited, 
+.content-category-header a:active {
+	
+}
+
+.content-category-header a:hover {
+	
+}
+
+dd.description {
+	
+}
+
+dd.title, dd.description {
+	
+}
+
+
+/*-------------------------------
+  End Category and Search Results
+---------------------------------*/
+
+/*-------------------------------
+  		Product Layouts
+---------------------------------*/
+
+/*----------------------
+	Upsell tables
+-----------------------*/
+.upsell-group {
+	
+}
+
+.upsell div {
+	border-color: #F7921E;
+}
+
+.upsell-header { /*--this is an h3--*/
+	background-color: #F7921E;
+	color: #ffffff;
+}
+
+
+.upsell-item1 { /*--zebra striping on tr's--*/
+	
+}
+
+.upsell-item1 td {
+	border-top: 1px solid #F7921E;
+	
+}
+
+.upsell-item1 td a:hover {
+	color: #000000;
+}
+
+.upsell-item2 {
+	
+}
+
+.upsell-item2 td { /*--zebra striping on tr's--*/
+	border-top: 1px solid #F7921E;
+	padding: 3px;
+}
+
+.upsell-item2 td a:hover {
+	color: #000000;
+}
+
+/*----------------------
+	End Upsell tables
+-----------------------*/
+
+/*----------------------
+	Product Detail
+-----------------------*/
+
+.product-page {
+	border-color: transparent;
+}
+
+.product-detail {
+	border-color: transparent;
+}
+
+
+.product-primary, .product-secondary, .product-options, .imageanddetails, .product-bundle, .product-misc {
+	border-width: 0px;
+}
+
+.product-detail,
+.product-bundle {
+	
+}
+
+/*-------------
+	Primary
+--------------*/
+
+.product-primary { 
+	border-color: transparent;
+}
+
+.product-detail-header {
+	color: #850B0C;
+}
+
+.product-detail-header h2 {
+	
+}
+
+.product-description {
+	
+}
+
+.product-features {
+	
+}
+
+.product-features ul {
+	
+}
+
+.product-features ul li {
+	
+}
+
+.product-features ul li em {
+	
+}
+
+/*-------------
+  End Primary
+--------------*/
+
+/*-------------
+	Secondary
+--------------*/
+
+.product-secondary {
+	
+}
+
+.product-options {
+	
+}
+
+.product-options form ul {
+	
+}
+
+.product-options form ul li {
+	
+}
+
+.imageanddetails {
+	border-color: transparent;
+}
+
+.product-misc {
+	border-color: transparent;
+}
+
+.product-options {
+	border-color: transparent;
+}
+
+.product-detail-button {
+	
+}
+
+
+/*-------------
+	Secondary
+--------------*/
+
+
+
+/*----------------------
+	Product Detail
+-----------------------*/
+
+/*-------------------------------
+  		End Product Layouts
+---------------------------------*/
+
+/*-------------------------------
+			Forms
+---------------------------------*/
+
+.required {
+	color: #cc0000;
+}
+
+button content-accent1 {
+	
+}
+
+/*-------------------------------
+			Forms
+---------------------------------*/
+
+
+
+/*---------------------------------------------------
+					End Wrapper 
+-----------------------------------------------------*/
+
+
+
+/*---------------------------------------------------
+					Footer-section
+-----------------------------------------------------*/
+
+.footer-section {
+	background-color: #cccccc;
+	border-top: 6px solid #ffffff;
+	color: #000000 /*~ footer.color */;	
+}
+
+.footer-section a:link, .footer-section a:visited {
+	color: #000000 /*~ footer.color */;	
+}
+
+/*-------------------------------
+		"Bottom" Navigation
+---------------------------------*/
+
+.navigation2 {
+	
+}
+
+.navigation2 ul {
+	
+}
+
+.navigation2 ul:after {
+    content: ".";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    font-size: 1px;
+    clear: both;
+}
+
+.navigation2 ul li {
+	
+}
+
+.navigation2 ul li a:link {
+	
+}
+
+.navigation2 ul li a:visited {
+	
+}
+
+.navigation2 ul li a:hover {
+	
+}
+
+/*-------------------------------
+		End "Bottom" Navigation
+---------------------------------*/
+
+.footer {
+	color: #000000 /*~ footer.color */;	
+}
+
+.footer a:link {
+	
+}
+
+.footer a:visited {
+	
+}
+
+.footer a:hover {
+	
+}
+
+/*---------------------------------------------------
+					End Footer-section
+-----------------------------------------------------*/
+

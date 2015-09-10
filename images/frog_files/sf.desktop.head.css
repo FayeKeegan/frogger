@@ -1,0 +1,10 @@
+/*
+  Name: sf.desktop.head.css
+   Ver: 2.8.7
+  Date: 08/26/2015 12:28 PM
+ Files:
+	tinymce.plugins.qsc-html-content
+
+*/
+
+body#tinymce td,div.qsc-html-content td{vertical-align:middle;}body#tinymce img,div.qsc-html-content img{float:none;}body#tinymce img,div.qsc-html-content img{max-width:none;}#advancedSection{display:none;}#singleSection{display:block;border:1px solid #D4D4D4;padding:10px;}#doubleSection{display:none;border:1px solid #D4D4D4;padding:10px;}#singleImageContainer,#doubleImageContainer{display:table;width:100%;}#singleImageLayoutImage{display:table-cell;vertical-align:top;}#doubleImageLayoutImage1{display:table-cell;vertical-align:top;width:50%;padding-right:5px;}#doubleImageLayoutImage2{display:table-cell;vertical-align:top;width:50%;padding-left:5px;}#doubleBrowseSection{padding-top:5px;}#singleImageLayoutImage img,#doubleImageLayoutImage1 img,#doubleImageLayoutImage2 img{width:100%;}#doubleImageBrowse1{display:inline;margin-left:190px;}#doubleImageBrowse2{display:inline;margin-left:400px;}.radioHorizontal{text-align:left;}.centerize{display:block;margin:0 auto;text-align:center;}

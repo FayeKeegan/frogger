@@ -14,7 +14,7 @@
 	Truck.COLOR = "#FFF68F";
 	Truck.DIM_X = 80;
 	Truck.VEL = [-3,0];
-	Truck.PADDING = 2;
+	Truck.PADDING = 3;
 
 	Truck.prototype.draw = function(ctx){
 		var x = this.pos[0] + this.padding;
@@ -24,7 +24,19 @@
 		ctx.clearRect(x, y, x_length, y_length);
 	  ctx.fillStyle = this.color;
 	  ctx.fillRect(x, y, x_length, y_length);
+	  this.drawWheel(ctx, this.pos[0] + this.dim_x / 4, this.pos[1])
+	  this.drawWheel(ctx, this.pos[0] + this.dim_x * 2/4, this.pos[1])
+	  this.drawWheel(ctx, this.pos[0] + this.dim_x * 3/4, this.pos[1])
+	  this.drawWheel(ctx, this.pos[0] + this.dim_x / 4, this.pos[1] + this.dim_y - this.padding)
+	  this.drawWheel(ctx, this.pos[0] + this.dim_x * 2/4, this.pos[1] + this.dim_y - this.padding)
+	  this.drawWheel(ctx, this.pos[0] + this.dim_x * 3/4, this.pos[1] + this.dim_y - this.padding)
 	};
+
+	Truck.prototype.drawWheel = function(ctx, x, y){
+		ctx.clearRect(x, y, this.dim_x / 6, this.padding);
+		ctx.fillStyle = "black";
+		ctx.fillRect(x, y, this.dim_x / 6, this.padding);
+	}
 
 
 })();

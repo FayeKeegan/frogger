@@ -31,18 +31,18 @@
 
   Game.prototype.draw = function (ctx) {
     // draw lily landing pad
-    ctx.fillStyle = "#71C671";
+    ctx.fillStyle = "#3fb618";
     ctx.fillRect(0,
       0, this.dim_x,
       this.lily_pad_y)
     // draw river
-    ctx.fillStyle = "#63B8FF";
+    ctx.fillStyle = "rgb(39, 128, 227)";
     ctx.fillRect(0,
       this.lily_pad_y,
       this.dim_x,
       this.river_y);
     // draw river bank
-    ctx.fillStyle = "#71C671";
+    ctx.fillStyle = "#3fb618";
     ctx.fillRect(0,
       this.lily_pad_y + this.river_y,
       this.dim_x,
@@ -53,7 +53,7 @@
       this.dim_x,
       this.road_y);
     //draw starting_strip
-    ctx.fillStyle = "#71C671";
+    ctx.fillStyle = "#3fb618";
     ctx.fillRect(0, this.lily_pad_y + this.river_y + this.river_bank_y + this.river_y,
       this.dim_x,
       this.starting_strip_y)

@@ -9,7 +9,6 @@
 
 	Frogger.Util.inherits(Frogger.BigLog, Frogger.Log);
 
-	BigLog.COLOR = "#9C661F";
 	BigLog.DIM_X = 150;
 	BigLog.VEL = [5,0];
 	

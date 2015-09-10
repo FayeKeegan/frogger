@@ -17,6 +17,14 @@ body {
   display: inline-block;
 }
 
-.panel:not(.panel-success) {
+.panel {
   width: 800px;
+}
+
+.panel-success {
+  margin: 0 auto;
+}
+
+.panel:not(.panel-success) {
+  height: 480px
 }

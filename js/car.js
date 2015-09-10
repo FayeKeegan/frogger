@@ -25,6 +25,16 @@
 		ctx.clearRect(x, y, x_length, y_length);
 	  ctx.fillStyle = this.color;
 	  ctx.fillRect(x, y, x_length, y_length);
+	  this.drawWheel(ctx, this.pos[0] + this.dim_x / 5, this.pos[1])
+	  this.drawWheel(ctx, this.pos[0] + this.dim_x * 3/5, this.pos[1])
+	  this.drawWheel(ctx, this.pos[0] + this.dim_x / 5, this.pos[1] + this.dim_y - this.padding)
+	  this.drawWheel(ctx, this.pos[0] + this.dim_x * 3/5, this.pos[1] + this.dim_y - this.padding)
 	};
+
+	Car.prototype.drawWheel = function(ctx, x, y){
+		ctx.clearRect(x, y, this.dim_x / 3, this.padding);
+		ctx.fillStyle = "black";
+		ctx.fillRect(x, y, this.dim_x / 3, this.padding);
+	}
 
 })();

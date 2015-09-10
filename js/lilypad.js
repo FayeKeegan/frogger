@@ -20,7 +20,7 @@
 		var x_length = this.dim_x;
 		var y_length = this.dim_y;
 		ctx.clearRect(x, y, x_length, y_length);
-	  ctx.fillStyle = "#63B8FF";
+	  ctx.fillStyle = "rgb(39, 128, 227)";
 	  ctx.fillRect(x, y, x_length, y_length);
 	}
 
@@ -30,7 +30,7 @@
 	  ctx.beginPath();
     ctx.arc(this.pad_x,this.pad_y,this.radius,Math.PI/7,-Math.PI/7,false);
     ctx.lineTo(this.pad_x,this.pad_y);
-    ctx.fillStyle = this.scored ? "pink" : "#008B45";
+    ctx.fillStyle = this.scored ? "pink" : "#3fb618";
     ctx.fill();
 	}
 

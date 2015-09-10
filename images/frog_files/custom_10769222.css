@@ -1,0 +1,32 @@
+/*------------------------------------
+	
+	Theme Name: Digital Music
+	Theme#: 303
+	File: Color 1
+	
+------------------------------------*/
+
+/*-----------------------------------
+		General
+-------------------------------------*/
+
+body {
+	font-family: Verdana, Geneva, Kalimati, sans-serif;	
+	font-size: 12px;
+	color: #000000;
+	background-color: #FA0709 /*~ main.background-color */;
+}
+
+.header .company-name {
+	font-weight: normal /*~ company-name.bold */;
+	font-family: "Arial Black", Gadget, sans-serif /*~ company-name.font */;
+	color:#050500 /*~ company-name.color */;
+	font-size: 30px /*~ company-name.size */;
+}
+
+.header .slogan {
+	font-weight: normal /*~ slogan.bold */;
+	font-family: "Comic Sans MS", sans-serif /*~ slogan.font */;
+	color: #040000 /*~ slogan.color */;
+	font-size: 18px /*~ slogan.size */;
+}
