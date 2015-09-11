@@ -86,7 +86,7 @@
     <script src="js/small_log.js"></script>
     <script>
       $(".start-button").click(function(){
-        $(".welcome-message, .game-over-message, game-won-message").removeClass("revealed").addClass("hidden");
+        $(".welcome-message, .game-over-message, .game-won-message").removeClass("revealed").addClass("hidden");
         $("#game-canvas").removeClass("hidden").addClass("revealed");
         var canvasEl = document.getElementById("game-canvas");
         var dim_y = 480
