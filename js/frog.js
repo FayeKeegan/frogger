@@ -61,21 +61,23 @@
 
   Frog.prototype.drawLegs = function(ctx){
     distToLeg = this.radius;
-    distBetweenLegs = this.radius * 3/4;
+    distBetweenLegs = this.radius/2;
     var direction = this.translateDirection();
     var directionsHash = {};
     if (direction === "up" || direction === "down"){
-      directionsHash = {"upLeftX" : this.pos[0] - distBetweenLegs,
-       "upRightX": this.pos[0] + distBetweenLegs,
-       "upLeftY": this.pos[1] - distToLeg,
-       "upRightY":this.pos[1] - distToLeg,
-       "downLeftX" : this.pos[0] - distBetweenLegs,
-       "downRightX": this.pos[0] + distBetweenLegs,
-       "downLeftY": this.pos[1] + distToLeg,
-       "downRightY":this.pos[1] + distToLeg
+      directionsHash = {
+      "upLeftX" : this.pos[0] - distToLeg,
+       "upRightX": this.pos[0] + distToLeg,
+       "upLeftY": this.pos[1] - distBetweenLegs,
+       "upRightY":this.pos[1] - distBetweenLegs,
+       "downLeftX" : this.pos[0] - distToLeg,
+       "downRightX": this.pos[0] + distToLeg,
+       "downLeftY": this.pos[1] + distBetweenLegs,
+       "downRightY":this.pos[1] + distBetweenLegs
      }
     } else {
-      directionsHash = {"upLeftX" : this.pos[0] - distBetweenLegs,
+      directionsHash = {
+        "upLeftX" : this.pos[0] - distBetweenLegs,
        "upRightX": this.pos[0] + distBetweenLegs,
        "upLeftY": this.pos[1] - distToLeg,
        "upRightY":this.pos[1] - distToLeg,
