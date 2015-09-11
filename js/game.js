@@ -2,31 +2,34 @@
   var Frogger = window.Frogger = window.Frogger || {};
 
   var Game = Frogger.Game = function(dim_y, dim_x) {
+    this.dim_y = dim_y;
+    this.dim_x = dim_x;
     this.score = 0;
     this.message = false;
     this.lives = 3;
     this.lost = false;
     this.over = false;
     this.won = false;
-    this.dim_y = dim_y;
-    this.dim_x = dim_x;
-    this.lily_pad_y = Game.LILY_PAD_Y;
-    this.river_bank_y = Game.RIVER_BANK_Y;
-    this.starting_strip_y = Game.STARTING_STRIP_Y;
-    this.lane_y = (this.dim_y - this.river_bank_y - this.lily_pad_y - this.starting_strip_y) / 10;
-    this.river_y = this.lane_y * 5;
-    this.road_y = this.lane_y * 5;
+    this.setupGameDimensions();
     this.floatingObjects = [];
     this.vehicles = [];
     this.lilypads = [];
-    this.setupGame();
+    this.setupGameObjects();
   };
 
   Game.LILY_PAD_Y = 60;
   Game.RIVER_BANK_Y = 60;
   Game.STARTING_STRIP_Y = 60;
 
-  Game.prototype.setupGame = function(){
+  Game.prototype.setupGameDimensions = function(){
+    this.lily_pad_y = Game.LILY_PAD_Y;
+    this.river_bank_y = Game.RIVER_BANK_Y;
+    this.starting_strip_y = Game.STARTING_STRIP_Y;
+    this.lane_y = (this.dim_y - this.river_bank_y - this.lily_pad_y - this.starting_strip_y) / 10;
+    this.river_y = this.lane_y * 5;
+    this.road_y = this.lane_y * 5;
+  }
+  Game.prototype.setupGameObjects = function(){
     this.addFrog();
     this.addFloatingObjects();
     this.addVehicles();
