@@ -16,18 +16,22 @@
     this.lane_y = (this.dim_y - this.river_bank_y - this.lily_pad_y - this.starting_strip_y) / 10;
     this.river_y = this.lane_y * 5;
     this.road_y = this.lane_y * 5;
-    this.addFrog();
     this.floatingObjects = [];
-    this.addFloatingObjects();
     this.vehicles = [];
-    this.addVehicles();
     this.lilypads = [];
-    this.addLilypads();
+    this.setupGame();
   };
 
   Game.LILY_PAD_Y = 60;
   Game.RIVER_BANK_Y = 60;
   Game.STARTING_STRIP_Y = 60;
+
+  Game.prototype.setupGame = function(){
+    this.addFrog();
+    this.addFloatingObjects();
+    this.addVehicles();
+    this.addLilypads();
+  };
 
   Game.prototype.draw = function (ctx) {
     // draw lily landing pad
@@ -82,13 +86,11 @@
     if (this.frogOnLilypad()){
       this.updateScore();
     }
-    if (this.frogDrowned()){
-      this.lives -= 1;
-      this.updateLives();
+    if (this.frogDrowned() || this.frogOffBoard()){
+      this.deductLife();
     }
     if (this.frogSmooshed() || this.frogCrushed()) {
-      this.lives -= 1
-      this.updateLives();
+      this.deductLife();
     }
     if (this.score === 5){
       this.won = true;
@@ -97,6 +99,11 @@
       this.lost = true;
     }
   };
+
+  Game.prototype.deductLife = function(){
+    this.lives -= 1;
+    this.updateLives();
+  }
 
   Game.prototype.gameOverMessage = function(){
     $("game-over-message").removeClass("hidden").addClass('')
@@ -291,6 +298,16 @@
       }
     }.bind(this))
     return smooshed;
+  }
+
+  Game.prototype.frogOffBoard = function(){
+    if (this.frog.pos[0] < 0 || this.frog.pos[0] > this.dim_x){
+      return true;
+    } else if (this.frog.pos[1] < 0 || this.frog.pos[1] > this.dim_y){
+      return true;
+    } else {
+      return false;
+    }
   }
 
   Game.prototype.frogOnLilypad = function(){
