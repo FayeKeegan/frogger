@@ -1,7 +1,7 @@
 # Frogger
 
 ## Description
-The classic game of Frogger! Built using JavaScript and Canvas. 
+The classic game of Frogger! Built using JavaScript to draw graphics directly on html5 canvas element.
 
 ## Instructions
 * Click [here][live_link] to play!
